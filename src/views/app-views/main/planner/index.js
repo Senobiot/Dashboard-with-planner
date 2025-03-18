@@ -1,3 +1,4 @@
+import React from 'react';
 import PlannerBoard from 'components/layout-components/PlannerBoard';
 
 const Planner = () => {
