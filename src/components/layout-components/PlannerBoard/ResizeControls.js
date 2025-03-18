@@ -1,4 +1,4 @@
-import { Button, Input, Row, Col, Divider } from 'antd';
+import { Button, Row, Col } from 'antd';
 import { RotateLeftOutlined, RotateRightOutlined } from '@ant-design/icons';
 import DimensionsInput from 'components/shared-components/DimensionsInput/DimensionsInput';
 
