@@ -1,0 +1,34 @@
+{
+  "Chair": [
+      { "sku": "Chair-1", "name": "Armchair", "imgSrc": "/img/furniture/chair.png", "length": 75, "width": 85 },
+      { "sku": "Chair-2", "name": "Office chair", "imgSrc": "/img/furniture/amchair.png", "length": 70, "width": 70 },
+      { "sku": "Chair-3", "name": "Scissors chair", "imgSrc": "/img/furniture/amchair-2.png", "length": 65, "width": 75 },
+      { "sku": "Chair-4", "name": "White armchair", "imgSrc": "/img/furniture/amchair-2.png", "length": 80, "width": 90 },
+      { "sku": "Chair-5", "name": "Wing chair", "imgSrc": "/img/furniture/amchair.png", "length": 85, "width": 95 },
+      { "sku": "Chair-6", "name": "Wooden armchair", "imgSrc": "/img/furniture/chair.png", "length": 90, "width": 100 }
+  ],
+  "Bed": [
+      { "sku": "Bed-1", "name": "Bed", "imgSrc": "/img/furniture/bed.png", "length": 200, "width": 160 },
+      { "sku": "Bed-2", "name": "Bunk bed", "imgSrc": "/img/furniture/sofa-2.png", "length": 210, "width": 120 },
+      { "sku": "Bed-3", "name": "Sleigh bed", "imgSrc": "/img/furniture/sofa-3.png", "length": 210, "width": 180 },
+      { "sku": "Bed-4", "name": "Sofa bed", "imgSrc": "/img/furniture/bed.png", "length": 190, "width": 140 }
+  ],
+  "Table": [
+      { "sku": "Table-1", "name": "Card table", "imgSrc": "/img/furniture/table-small.png", "length": 110, "width": 250 },
+      { "sku": "Table-2", "name": "Wooden dining table", "imgSrc": "/img/furniture/table-pc.png", "length": 200, "width": 100 },
+      { "sku": "Table-3", "name": "Wooden table", "imgSrc": "/img/furniture/table.png", "length": 200, "width": 100 }
+  ],
+  "Storage": [
+      { "sku": "Storage-1", "name": "Cabinet", "imgSrc": "/img/furniture/shelf2.png", "length": 100, "width": 50 },
+      { "sku": "Storage-2", "name": "Drawer", "imgSrc": "/img/furniture/shelf2.png", "length": 80, "width": 45 }
+  ],
+  "Doors": [
+      { "sku": "Door-1", "name": "Door", "imgSrc": "/img/furniture/door.png", "length": 120, "width": 45 }
+  ],
+  "Partitions": [
+    { "sku": "Partition-1", "name": "Partition", "imgSrc": "/img/furniture/wall-partition.png", "length": 100, "width": 10 }
+],
+  "Other": [
+      { "sku": "Other-1", "name": "Cushion", "imgSrc": "/img/furniture/poof.png", "length": 50, "width": 50 }
+  ]
+}
