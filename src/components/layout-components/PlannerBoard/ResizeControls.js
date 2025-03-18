@@ -6,9 +6,7 @@ const ResizeControls = ({ selectedItem = {}, updateItem }) => {
   const { imgSrc, width, height, name, angle = 0 } = selectedItem;
 
   const setRotation = (_, reverse) => {
-    console.log(reverse);
     const newAngle = (Number(angle) + (reverse ? 15 : -15)) % 360;
-    console.log(newAngle);
     updateItem({ ...selectedItem, angle: newAngle });
   };
 
