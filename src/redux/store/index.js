@@ -1,24 +1,27 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import reducers from "../reducers";
-import createSagaMiddleware from "redux-saga";
-import rootSaga from "../sagas/index";
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducers from '../reducers';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from '../sagas/index';
+import clientsDataFormatter from 'redux/middlewares/Clients';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const middlewares = [sagaMiddleware];
+const middlewares = [sagaMiddleware, clientsDataFormatter];
 
 function configureStore(preloadedState) {
- 
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  const store = createStore(reducers, preloadedState, composeEnhancers(
-    applyMiddleware(...middlewares)
-  ));
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const store = createStore(
+    reducers,
+    preloadedState,
+    composeEnhancers(applyMiddleware(...middlewares))
+  );
 
   sagaMiddleware.run(rootSaga);
 
   if (module.hot) {
-    module.hot.accept("../reducers/index", () => {
-      const nextRootReducer = require("../reducers/index");
+    module.hot.accept('../reducers/index', () => {
+      const nextRootReducer = require('../reducers/index');
       store.replaceReducer(nextRootReducer);
     });
   }
@@ -29,4 +32,3 @@ function configureStore(preloadedState) {
 const store = configureStore();
 
 export default store;
-

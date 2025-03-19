@@ -12,7 +12,11 @@ export const AppViews = () => {
           path={`${APP_PREFIX_PATH}${ROUTES_NAV.main.inner}`}
           component={lazy(() => import(`./main`))}
         />
-        <Redirect from={`${APP_PREFIX_PATH}`} to={`${APP_PREFIX_PATH}/main`} />
+
+        <Route
+          path={`${APP_PREFIX_PATH}${ROUTES_NAV.system.inner}`}
+          component={lazy(() => import(`./system`))}
+        />
         <Redirect
           from={`${APP_PREFIX_PATH}`}
           to={`${APP_PREFIX_PATH}${ROUTES_NAV.main.inner}`}

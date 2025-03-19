@@ -1,5 +1,5 @@
 import React from 'react';
-import PlannerBoard from 'components/layout-components/PlannerBoard';
+import PlannerBoard from './PlannerBoard';
 
 const Planner = () => {
   return <PlannerBoard />;
