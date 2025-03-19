@@ -19,8 +19,7 @@
       { "sku": "Table-3", "name": "Wooden table", "imgSrc": "/img/furniture/table.png", "length": 200, "width": 100 }
   ],
   "Storage": [
-      { "sku": "Storage-1", "name": "Cabinet", "imgSrc": "/img/furniture/shelf2.png", "length": 100, "width": 50 },
-      { "sku": "Storage-2", "name": "Drawer", "imgSrc": "/img/furniture/shelf2.png", "length": 80, "width": 45 }
+      { "sku": "Storage-1", "name": "Cabinet", "imgSrc": "/img/furniture/shelf.png", "length": 100, "width": 50 }
   ],
   "Doors": [
       { "sku": "Door-1", "name": "Door", "imgSrc": "/img/furniture/door.png", "length": 120, "width": 45 }
