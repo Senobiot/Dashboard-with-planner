@@ -2,7 +2,7 @@
 
 App with simply dashboard and 2d planner for positioning furniture
 
-[DEPLOY](https://test-hammer-systems.netlify.app/app/main/dashboard)
+[DEPLOY](https://test-hammer-systems.netlify.app/)
 
 
 <details>
