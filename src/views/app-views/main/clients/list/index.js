@@ -10,6 +10,7 @@ const List = () => {
   const clientsList = useSelector((state) => state.clients.list);
 
   useEffect(() => {
+    console.log(clientsList);
     if (!clientsList.length) {
       const timer = setTimeout(() => {
         dispatch(getClientsList());
@@ -20,7 +21,7 @@ const List = () => {
         dispatch(clearClientsData());
       };
     }
-  }, [dispatch, clientsList.length]);
+  }, []);
 
   return loading ? (
     <Loading cover='content' />
