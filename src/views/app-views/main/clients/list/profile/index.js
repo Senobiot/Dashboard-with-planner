@@ -13,7 +13,7 @@ import { UserOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { UploadOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
-import { sendUpdatedClienData } from 'redux/actions';
+import { sendUpdatedClienData, setCurrentClient } from 'redux/actions';
 import Loading from 'components/shared-components/Loading';
 import { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -69,9 +69,9 @@ const UserProfileForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.clients.currentClient);
-  const { city, email, name, phone, username, postcode, website, avatarUrl } =
+  const { city, email, name, phone, username, postcode, website, avatar } =
     user || {};
-  const [avatar, setAvatar] = useState(avatarUrl);
+  const [img, setImg] = useState(avatar);
   const [form] = Form.useForm();
   const loading = useSelector((state) => state.clients.loading);
 
@@ -81,7 +81,7 @@ const UserProfileForm = () => {
       const reader = new FileReader();
       reader.onload = (e) => {
         try {
-          setAvatar(e.target.result);
+          setImg(e.target.result);
         } catch (err) {
           console.error('Error processing image:', err);
         }
@@ -91,7 +91,7 @@ const UserProfileForm = () => {
     },
   };
 
-  const handleDelete = () => setAvatar('');
+  const handleDelete = () => setImg('');
 
   const onFinish = (values) => {
     dispatch(sendUpdatedClienData(values));
@@ -102,6 +102,10 @@ const UserProfileForm = () => {
   };
 
   useEffect(() => {
+    timerRef.current = setTimeout(() => {
+      dispatch(setCurrentClient(user));
+    }, 1000);
+
     return () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
@@ -122,7 +126,7 @@ const UserProfileForm = () => {
             padding: '20px',
           }}
         >
-          <Avatar size={100} icon={<UserOutlined />} src={avatar} />
+          <Avatar size={100} icon={<UserOutlined />} src={img} />
           <div
             style={{
               display: 'flex',

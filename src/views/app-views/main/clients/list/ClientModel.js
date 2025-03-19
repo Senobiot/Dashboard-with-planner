@@ -15,6 +15,7 @@ const ClientModel = ({ data }) => {
       `${ROUTES_NAV.main}${ROUTES_NAV.main.clients.list}?name=${client.name}`
     );
   };
+
   const columns = [
     {
       title: 'Avatar',

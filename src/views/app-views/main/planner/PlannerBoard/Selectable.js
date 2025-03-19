@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Select, Button, Row, Col, Divider } from 'antd';
+import { Select, Button, Row, Col, Divider, Typography } from 'antd';
 import jsonData from 'assets/data/furniture.json';
 import DimensionsInput from 'components/shared-components/DimensionsInput/DimensionsInput';
 const { Option, OptGroup } = Select;
+const { Text } = Typography;
 
 const Selectable = ({ onInsert }) => {
   const [dimensions, setDimensions] = useState({ width: 50, height: 50 });
@@ -25,7 +26,7 @@ const Selectable = ({ onInsert }) => {
     <Row>
       <Col span={24}>
         <Select
-          showSearch
+          className='furniture-select'
           placeholder='Select furniture'
           optionFilterProp='children'
           onChange={handleChange}
@@ -40,7 +41,30 @@ const Selectable = ({ onInsert }) => {
             <OptGroup key={group} label={group}>
               {jsonData[group]?.map((item) => (
                 <Option key={item.name} value={item.sku}>
-                  {item.name}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      height: '60px',
+                    }}
+                  >
+                    <img
+                      src={item.imgSrc}
+                      alt={item.name}
+                      style={{
+                        width: '50px',
+                        height: '50px',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <Text>{item.name}</Text>
+                      <Text type='secondary'>
+                        W:{item.width} x H: {item.length}
+                      </Text>
+                    </div>
+                  </div>
                 </Option>
               ))}
             </OptGroup>

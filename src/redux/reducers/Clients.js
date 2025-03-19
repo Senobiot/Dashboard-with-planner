@@ -22,9 +22,9 @@ const clients = (state = initState, action) => {
     case GET_CLIENTS_FAILURE:
       return { ...state, loading: false, error: action.message };
     case SET_CURRENT_CLIENT:
-      return { ...state, currentClient: action.data };
+      return { ...state, currentClient: action.data, loading: false };
     case CLEAR_CLIENTS_DATA:
-      return { ...state, list: [] };
+      return { ...state, list: [], loading: true };
     case SEND_UPDATED_CLIENT_DATA:
       return { ...state, loading: true };
     default:

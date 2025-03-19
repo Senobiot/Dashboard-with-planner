@@ -87,18 +87,16 @@ const InteractiveDesk = ({ items, setItems, setSelected }) => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', overflow: 'auto' }}>
       <div
         onMouseDown={handleMouseDown}
         onClick={handlClick}
         ref={containerRef}
         style={{
-          width: '100%',
+          width: '1600px',
           height: '500px',
           border: '1px solid #ccc',
           position: 'relative',
-          margin: '0 auto',
-          overflow: 'hidden',
           background:
             "url('/img/furniture/parquet.jpg') no-repeat 50% / cover ",
         }}

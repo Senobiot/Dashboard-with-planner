@@ -3,9 +3,9 @@ import { GET_CLIENTS_SUCCESS } from 'redux/constants/Clients';
 const clientsDataFormatter = () => (next) => async (action) => {
   const { data } = action;
   if (action.type === GET_CLIENTS_SUCCESS) {
-    const modifyedData = data.map((e) => ({
+    const modifyedData = data.map((e, i) => ({
       key: e.id,
-      avatar: e.avatar || '',
+      avatar: e.avatar || `/img/avatars/thumb-${i + 1}.jpg`,
       name: e.name,
       email: e.email,
       city: e.address?.city,
