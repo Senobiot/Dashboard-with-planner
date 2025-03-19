@@ -15,6 +15,7 @@ export const ROUTES_NAV = {
       list: '/list',
       groups: '/groups',
       inner: '/clients',
+      profile: '/:id',
     },
     banners: '/banners',
     promocodes: '/promocodes',

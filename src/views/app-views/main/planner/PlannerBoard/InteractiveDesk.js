@@ -64,7 +64,7 @@ const InteractiveDesk = ({ items, setItems, setSelected }) => {
       container.removeEventListener('mouseup', onMouseUp);
       container.removeEventListener('mouseleave', onMouseUp);
     };
-  }, [isDragging]);
+  }, [isDragging, setItems]);
 
   const handleMouseDown = (event, id) => {
     event.preventDefault();
@@ -80,8 +80,6 @@ const InteractiveDesk = ({ items, setItems, setSelected }) => {
   };
 
   const handlClick = (event) => {
-    console.log(event.target.getAttribute(idKey));
-    console.log(items);
     const item = items.find(
       (e) => e.id === Number(event.target.getAttribute(idKey))
     );
